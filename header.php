@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="css/main.css">
 
     <script src="js/jquery-3.2.1.min.js" ></script>
+    <script src="js/handlebars-v4.7.6.js" ></script>
     <script src="js/action.js"></script>
+    
 
 </head>
 <body>
