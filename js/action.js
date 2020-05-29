@@ -56,4 +56,8 @@ $(document).ready(function(){
         .on('click', '.checkbox', function(e){
             $(this).closest('li').toggleClass('complete');
         });
+
+    $('#todo-list').find('ul').sortable({
+        items: 'li:not(.new)',
+    });
 });
