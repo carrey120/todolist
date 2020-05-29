@@ -5,21 +5,21 @@
     <h1>Todo List</h1>
     <div id="todo-list">
         <ul>
-            <li>
+            <li class="">
                 <div class="checkbox"></div>
                 <div class="content">Lorem, ipsum dolor.</div>
                 <div class="actions">
                     <div class="delete">x</div>
                 </div>
             </li>
-            <li>
+            <li class="">
                 <div class="checkbox"></div>
                 <div class="content">Lorem, ipsum dolor.</div>
                 <div class="actions">
                     <div class="delete">x</div>
                 </div>
             </li>
-            <li>
+            <li class="complete">
                 <div class="checkbox"></div>
                 <div class="content">Lorem, ipsum dolor.</div>
                 <div class="actions">
@@ -33,6 +33,16 @@
         </ul>
     </div>
 
+</div>
+
+<div class="template hide">
+    <li>
+        <div class="checkbox"></div>
+        <div class="content"></div>
+        <div class="actions">
+            <div class="delete">x</div>
+        </div>
+    </li>
 </div>
 
 
