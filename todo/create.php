@@ -11,7 +11,7 @@ try{
 }
 
 
-$sql = 'INSERT INTO todos (content, is_complete, order)
+$sql = 'INSERT INTO todos (content, is_complete, `order`)
         VALUES (:content, :is_complete, :order)';
 $statement = $pdo->prepare($sql);
 $statement->bindValue(':content', $_POST['content'], PDO::PARAM_STR);
@@ -22,3 +22,7 @@ $result = $statement->execute();
 if($result) {
     echo json_encode(['id' => $pdo->lastInsertId()]);
 }
+// debug 
+// else {
+//     var_dump($pdo->errorInfo());
+// }
