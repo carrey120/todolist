@@ -2,6 +2,10 @@ $(document).ready(function(){
     var source = $("#todo-list-item-template").html();
     var todoTemplate = Handlebars.compile(source);
 
+    $.each(todos, function(index, todo){
+        var li = todoTemplate(todo);
+    });
+
     //create
     // $('li.new').find('.content').blur(function(e){
     //     var todo = $(e.currentTarget).text();

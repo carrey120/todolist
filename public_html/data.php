@@ -1,5 +1,5 @@
 <?php 
-include('../../db.php');
+include('../db.php');
 
 
 // 用PDO連接到MYsql
@@ -16,3 +16,8 @@ $sql = 'SELECT * FROM todos ORDER BY `order` ASC';
 $statement = $pdo->prepare($sql);
 $statement->execute();
 $todos = $statement->fetchALL(PDO::FECTCH_ASSOC);
+?>
+
+<script>
+    var todos = <?= json_encode($todos,JSON_NUMERIC_CHECK) ?>
+</script>
