@@ -1,5 +1,5 @@
 <?php 
-include('../db.php');
+include('../../db.php');
 
 
 // 用PDO連接到MYsql

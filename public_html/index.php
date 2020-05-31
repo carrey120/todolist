@@ -27,7 +27,7 @@
 
 
 <script id="todo-list-item-template" type="text/x-handlebars-template">
-<li data-id="{{id}}" class="{{#if is_complete}}complete{{/if}}">
+    <li data-id="{{id}}" class="{{#if is_complete}}complete{{/if}}">
         <div class="checkbox"></div>
         <div class="content">{{content}}</div>
         <div class="actions">
