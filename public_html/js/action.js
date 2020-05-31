@@ -35,7 +35,7 @@ $(document).ready(function(){
                     var order = $('#todo-list').find('li:not(.new)').length +1;
 
                     // AJAX： create API 
-                    $.post('todo/create.php', {content: todo, order: order}, function(data, textStatus, xhr){
+                    $.post('todo/create.php', { content: todo, order: order }, function(data, textStatus, xhr){
                         todo = {
                             id: data.id,
                             is_complete:false,

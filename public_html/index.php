@@ -1,5 +1,5 @@
 <?php include('header.php') ?>
-<?php include('../data.php') ?>
+<?php include('data.php') ?>
 
 
 <div id="panel">
