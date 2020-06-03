@@ -89,5 +89,17 @@ $(document).ready(function(){
 
     $('#todo-list').find('ul').sortable({
         items: 'li:not(.new)',
+        stop: function(){
+            var orderPair = [];
+            $('#todo-list').find('li:not(.new)').each(function(index, li){
+                
+                orderPair.push({
+                    id: $(li).data('id'),
+                    order: index +1,
+                });
+
+            });
+            $.post('todo/sort.php', {orderPair: orderPair});
+        },
     });
 });
