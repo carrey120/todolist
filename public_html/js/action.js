@@ -2,10 +2,11 @@ $(document).ready(function(){
     var source = $("#todo-list-item-template").html();
     var todoTemplate = Handlebars.compile(source);
 
-    // var todoListUI = '';
-    // $.each(todos, function(index, todo){
-    //     var li = todoTemplate(todo);
-    // });
+    var todoListUI = '';
+    $.each(todos, function(index, todo){
+        todoListUI = todoListUI + todoTemplate(todo);
+    });
+    $('#todo-list').find('li.new').before(todoListUI);
 
     //create
     // $('li.new').find('.content').blur(function(e){
@@ -31,6 +32,7 @@ $(document).ready(function(){
         // create and update
         .on('blur', '.content', function(e){
             var isNew = $(this).closest('li').is('.new');
+            // 如果是新的資料就執行isnew
             if (isNew) {
                 var todo = $(e.currentTarget).text();
                 todo = todo.trim();
@@ -54,19 +56,35 @@ $(document).ready(function(){
             }
 
             else {
+                //AJAX call
+                var id = $(this).closest('li').data('id');
+                var content = $(this).text();
+
+                $.post('todo/update.php',{id:id, content:content});
+
                 $(this).prop('contenteditable', false);
             }
+            
         })
         // delete 
         .on('click', '.delete', function(e){
             var result = confirm('do you want to delete?');
             if (result) {
-                $(this).closest('li').remove();
+                //AJAZ call
+                var id= $(this).closest('li').data('id');
+                $.post('todo/delete.php', {id: id}, function(data, textStatus, xhr){
+                    $(e.currentTarget).closest('li').remove();
+                });
+                
             }
         })
         // complete 
         .on('click', '.checkbox', function(e){
-            $(this).closest('li').toggleClass('complete');
+            // AJAX call 
+            var id = $(this).closest('li').data('id');
+            $.post('todo/complete.php', {id: id}, function(data, textStatus, xhr){
+                $(e.currentTarget).closest('li').toggleClass('complete');
+            });
         });
 
     $('#todo-list').find('ul').sortable({

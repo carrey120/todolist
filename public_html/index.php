@@ -6,7 +6,7 @@
     <h1>Todo List</h1>
     <div id="todo-list">
         <ul>
-            <?php foreach ($todos as $key => $todo): ?>
+            <!-- <?php foreach ($todos as $key => $todo): ?>
                 <li data-id="<?= $todo['id'] ?>">
                     <div class="checkbox"></div>
                     <div class="content"><?= $todo['content'] ?></div>
@@ -14,7 +14,7 @@
                         <div class="delete">x</div>
                     </div>
                 </li>
-            <?php endforeach ?>
+            <?php endforeach ?> -->
 
             <li class='new'>
                 <div class="checkbox"></div>
